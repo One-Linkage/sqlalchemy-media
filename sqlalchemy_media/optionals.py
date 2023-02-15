@@ -74,7 +74,11 @@ def ensure_paramiko():
 try:
     import google.cloud.storage
 except ImportError:  # pragma: no cover
-    google.cloud.storage = None
+    googledict = { "cloud": { "storage": None }}
+    class Struct:
+            def __init__(self, **entries):
+                        self.__dict__.update(entries)
+    google = Struct(**googledict) 
 
 
 def ensure_gcs():

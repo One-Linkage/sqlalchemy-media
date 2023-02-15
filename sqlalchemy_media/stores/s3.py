@@ -39,7 +39,7 @@ class S3Store(Store):
     base_url = 'https://{0}.s3.amazonaws.com'
 
     def __init__(self, bucket: str, access_key: str = None, secret_key: str = None,
-                 region: str, max_age: int = DEFAULT_MAX_AGE,
+                 region: str = None, max_age: int = DEFAULT_MAX_AGE,
                  prefix: str = None, base_url: str = None,
                  cdn_url: str = None, cdn_prefix_ignore: bool = False, 
                  acl: str = 'private'):
